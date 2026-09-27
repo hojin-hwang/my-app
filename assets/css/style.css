@@ -705,8 +705,7 @@ h1, h2, h3, h4 {
 /* ---------- Responsive ---------- */
 @media (max-width: 900px) {
   .hero-grid,
-  .about-grid,
-  .contact-grid { grid-template-columns: 1fr; }
+  .about-grid { grid-template-columns: 1fr; }
   .hero-grid { gap: 36px; }
   .avatar-card { max-width: 380px; }
   .section { padding: 72px 0; }
@@ -744,6 +743,6 @@ h1, h2, h3, h4 {
 }
 
 @media print {
-  .header, .to-top, .progress, .contact-form, .filters { display: none !important; }
+  .header, .to-top, .progress, .filters { display: none !important; }
   body { background: #fff; color: #000; }
 }
