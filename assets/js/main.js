@@ -362,16 +362,22 @@
     const rows = [
       { icon: "mail", key: "Email", value: PROFILE.email, copy: true },
       { icon: "phone", key: "Phone", value: PROFILE.phone, copy: true },
+      { icon: "link", key: "Website", value: PROFILE.siteUrl, link: true },
       { icon: "pin", key: "Address", value: PROFILE.contact.address },
     ].filter((r) => r.value);
 
     rows.forEach((r) => {
+      const valueHtml = r.link
+        ? `<a href="${esc(r.value)}" target="_blank" rel="noopener noreferrer">${esc(
+            r.value
+          )}</a>`
+        : esc(r.value);
       const item = el(
         "div",
         { class: "contact-item" },
         `<div class="ico">${svg(r.icon)}</div>
          <div><div class="k">${esc(r.key)}</div>
-         <div class="v">${esc(r.value)}</div></div>`
+         <div class="v">${valueHtml}</div></div>`
       );
       if (r.copy) {
         const btn = el("button", { type: "button", class: "copy" }, "복사");

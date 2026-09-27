@@ -20,11 +20,13 @@ const PROFILE = {
   email: "hojinh@gmail.com",
   phone: "", // TODO: 공개하고 싶으면 입력 (예: "010-0000-0000"), 비우면 표시되지 않음
   resumeUrl: "", // TODO: 이력서 PDF 경로 (예: "assets/resume.pdf"), 비우면 버튼 숨김
+  siteUrl: "https://my-app-one-snowy.vercel.app/",
   avatarInitials: "JH",
 
   links: [
     { label: "GitHub", url: "https://github.com/hojin-hwang", icon: "github" },   // TODO
     { label: "Email", url: "mailto:hojinh@gmail.com", icon: "mail" },
+    { label: "Website", url: "https://my-app-one-snowy.vercel.app/", icon: "link" },
     { label: "Blog", url: "", icon: "blog" },                          // TODO (비우면 숨김)
     { label: "LinkedIn", url: "", icon: "linkedin" },                  // TODO (비우면 숨김)
   ],

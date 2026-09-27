@@ -621,6 +621,8 @@ h1, h2, h3, h4 {
 .contact-item .ico svg { width: 18px; height: 18px; }
 .contact-item .k { font-size: 12px; color: var(--text-faint); }
 .contact-item .v { font-weight: 600; font-size: 15px; word-break: break-all; }
+.contact-item .v a { color: var(--accent-text); }
+.contact-item .v a:hover { text-decoration: underline; }
 .contact-item .copy {
   margin-left: auto;
   border: 1px solid var(--border);
