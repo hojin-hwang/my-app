@@ -595,11 +595,9 @@ h1, h2, h3, h4 {
 /* ---------- Contact ---------- */
 .contact-grid {
   display: grid;
-  grid-template-columns: 0.85fr 1.15fr;
-  gap: 40px;
-  align-items: start;
+  max-width: 560px;
 }
-.contact-list { display: grid; gap: 12px; margin-top: 26px; }
+.contact-list { display: grid; gap: 12px; }
 .contact-item {
   display: flex;
   align-items: center;
@@ -636,55 +634,6 @@ h1, h2, h3, h4 {
   flex: 0 0 auto;
 }
 .contact-item .copy:hover { border-color: var(--accent); color: var(--accent-text); }
-
-form.contact-form {
-  background: var(--bg-elev);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: 28px;
-  box-shadow: var(--shadow-md);
-}
-.field { margin-bottom: 18px; }
-.field label {
-  display: block;
-  font-size: 13px;
-  font-weight: 600;
-  margin-bottom: 7px;
-}
-.field input,
-.field textarea {
-  width: 100%;
-  padding: 12px 14px;
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--border);
-  background: var(--bg);
-  color: var(--text);
-  font: inherit;
-  font-size: 15px;
-  transition: border-color 0.16s ease, box-shadow 0.16s ease;
-}
-.field textarea { resize: vertical; min-height: 130px; }
-.field input:focus,
-.field textarea:focus {
-  outline: none;
-  border-color: var(--accent);
-  box-shadow: 0 0 0 3px var(--accent-soft);
-}
-.field.has-error input,
-.field.has-error textarea { border-color: #e2544c; }
-.field .error {
-  display: none;
-  margin-top: 6px;
-  font-size: 12.5px;
-  color: #e2544c;
-}
-.field.has-error .error { display: block; }
-
-.form-note {
-  margin: 14px 0 0;
-  font-size: 13px;
-  color: var(--text-faint);
-}
 
 /* ---------- Footer ---------- */
 .footer {
