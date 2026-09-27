@@ -1,11 +1,188 @@
 <!DOCTYPE html>
-<html lang="en">
-	<body>
-		<h1>Hello, World!</h1>
-		<p>This is a simple paragraph.</p>
-		<p>This is another simple paragraph.</p>
-		<ul>
-			<li><a href="about.html">About Us</a></li>
-			<li><a href="contact.html">Contact</a></li>
-		</ul>		
+<html lang="ko" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>프로필 · Full-Stack Developer</title>
+    <meta
+      name="description"
+      content="프론트엔드와 백엔드를 모두 다루는 풀스택 개발자의 프로필 사이트입니다."
+    />
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="프로필 · Full-Stack Developer" />
+    <meta
+      property="og:description"
+      content="프론트엔드와 백엔드를 모두 다루는 풀스택 개발자의 프로필 사이트입니다."
+    />
+
+    <!-- 외부 CSS 라이브러리: Pretendard 웹폰트 (한글 가독성) -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <!-- 테마 깜빡임(FOUC) 방지: 페인트 전에 저장된 테마 적용 -->
+    <script>
+      (function () {
+        try {
+          var t =
+            localStorage.getItem("profile-theme") ||
+            (window.matchMedia("(prefers-color-scheme: dark)").matches
+              ? "dark"
+              : "light");
+          document.documentElement.setAttribute("data-theme", t);
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">본문으로 바로가기</a>
+    <div class="progress" id="progress" aria-hidden="true"></div>
+
+    <!-- ============ HEADER ============ -->
+    <header class="header" id="header">
+      <div class="wrap">
+        <a class="brand" href="#top">
+          <span class="brand-mark" id="brandMark"></span>
+          <span id="brandName"></span>
+        </a>
+
+        <nav class="nav" id="nav" aria-label="주요 메뉴">
+          <a href="#about">소개</a>
+          <a href="#skills">기술</a>
+          <a href="#projects">프로젝트</a>
+          <a href="#contact">연락</a>
+        </nav>
+
+        <div class="header-actions">
+          <button
+            class="icon-btn"
+            id="themeToggle"
+            type="button"
+            aria-label="테마 전환"
+          ></button>
+          <button
+            class="icon-btn nav-toggle"
+            id="navToggle"
+            type="button"
+            aria-label="메뉴 열기"
+            aria-expanded="false"
+            aria-controls="nav"
+          ></button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- ============ HERO ============ -->
+      <section class="hero" id="top">
+        <div class="wrap hero-grid">
+          <div>
+            <span class="hero-badge"
+              ><span class="dot"></span> 새로운 기회를 찾고 있습니다</span
+            >
+            <h1 id="heroName"></h1>
+            <p class="typed-line">
+              <span id="typed"></span><span class="caret"></span>
+            </p>
+            <p class="hero-summary" id="heroSummary"></p>
+            <div class="hero-cta" id="heroCta"></div>
+          </div>
+
+          <aside class="avatar-card">
+            <div class="avatar" id="avatar"></div>
+            <h3 id="cardName"></h3>
+            <p class="role" id="cardRole"></p>
+            <ul class="avatar-meta" id="avatarMeta"></ul>
+            <div class="social" id="socialLinks"></div>
+          </aside>
+        </div>
+
+        <div class="wrap">
+          <div class="stats" id="stats"></div>
+        </div>
+      </section>
+
+      <!-- ============ ABOUT ============ -->
+      <section class="section" id="about">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <span class="section-eyebrow">About</span>
+            <h2 class="section-title">저는 이런 개발자입니다</h2>
+            <p class="section-desc">
+              무엇을 배웠고, 어떤 방식으로 일하는지 정리했습니다.
+            </p>
+          </div>
+
+          <div class="about-grid">
+            <div class="about-text reveal" id="aboutText"></div>
+            <ul class="timeline reveal" id="timeline"></ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SKILLS ============ -->
+      <section class="section" id="skills">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <span class="section-eyebrow">Skills</span>
+            <h2 class="section-title">다룰 수 있는 기술</h2>
+            <p class="section-desc">
+              화면부터 서버, 데이터베이스까지 한 흐름으로 만들 수 있습니다.
+            </p>
+          </div>
+          <div class="skill-groups" id="skillGroups"></div>
+        </div>
+      </section>
+
+      <!-- ============ PROJECTS ============ -->
+      <section class="section" id="projects">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <span class="section-eyebrow">Projects</span>
+            <h2 class="section-title">만들어 본 것들</h2>
+            <p class="section-desc">
+              분류를 눌러 보고 싶은 프로젝트만 골라 볼 수 있습니다.
+            </p>
+          </div>
+          <div class="filters" id="projectFilters" role="group" aria-label="프로젝트 분류"></div>
+          <div class="project-grid" id="projectGrid"></div>
+        </div>
+      </section>
+
+      <!-- ============ CONTACT ============ -->
+      <section class="section" id="contact">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <span class="section-eyebrow">Contact</span>
+            <h2 class="section-title" id="contactHeadline"></h2>
+            <p class="section-desc" id="contactBody"></p>
+          </div>
+
+          <div class="contact-grid">
+            <div class="contact-list reveal" id="contactList"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+      <div class="wrap">
+        <span>© <span id="footerYear"></span> <span id="footerName"></span></span>
+        <span>Built with vanilla JavaScript — no JS libraries.</span>
+      </div>
+    </footer>
+
+    <button class="to-top" id="toTop" type="button" aria-label="맨 위로"></button>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
 </html>

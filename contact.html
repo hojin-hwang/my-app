@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
-	<body>
-		<h1>Contact Us</h1>
-		<p>This is the contact page.</p>
-	
-
-		<p>email: contact@example.com</p>
-		<p>phone: (123) 456-7890</p>
-		<p>address : abcd</p>
-
-		<ul>
-			<li><a href="index.html">Home</a></li>
-			<li><a href="about.html">About Us</a></li>
-		</ul>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>연락처 · 리다이렉트</title>
+    <!-- 프로필 사이트가 한 페이지로 합쳐졌습니다. 기존 링크를 위해 리다이렉트만 남깁니다. -->
+    <meta http-equiv="refresh" content="0; url=index.html#contact" />
+    <link rel="canonical" href="index.html" />
+  </head>
+  <body>
+    <p><a href="index.html#contact">연락처 섹션으로 이동</a></p>
+    <script>
+      location.replace("index.html#contact");
+    </script>
+  </body>
 </html>

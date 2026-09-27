@@ -1,12 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
-	<body>
-		<h1>About Us</h1>
-		<p>This is the about page.</p>
-		<p>We are a company that values excellence and innovation.</p>
-		<p>나는 삼육보건대학교 학생입니다.</p>
-		<ul>
-			<li><a href="index.html">Home</a></li>
-			<li><a href="contact.html">Contact</a></li>
-		</ul>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>소개 · 리다이렉트</title>
+    <!-- 프로필 사이트가 한 페이지로 합쳐졌습니다. 기존 링크를 위해 리다이렉트만 남깁니다. -->
+    <meta http-equiv="refresh" content="0; url=index.html#about" />
+    <link rel="canonical" href="index.html" />
+  </head>
+  <body>
+    <p><a href="index.html#about">소개 섹션으로 이동</a></p>
+    <script>
+      location.replace("index.html#about");
+    </script>
+  </body>
 </html>
